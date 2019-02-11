@@ -18,7 +18,6 @@ import java.util.LinkedList;
  * @date 2019/2/11
  * @since v1.0.0
  */
-@Data
 public class SinglyLinkedList<T> {
     private Node<T> first;
     private Node<T> last;
@@ -51,6 +50,17 @@ public class SinglyLinkedList<T> {
         }
     }
 
+    public T getFirst(){
+        return first.data;
+    }
+
+    public void removeFirst() {
+        //Node tmp = this.first;
+
+        this.first = this.first.next;
+        size--;
+    }
+
 
     private class Node<T> {
         private T data;
@@ -74,5 +84,9 @@ public class SinglyLinkedList<T> {
         singlyLinkedList.add(3);
         singlyLinkedList.printAll();
         System.out.println(singlyLinkedList.getSize());
+    }
+
+    public int getSize() {
+        return size;
     }
 }
