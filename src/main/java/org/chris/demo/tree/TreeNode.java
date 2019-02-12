@@ -37,11 +37,7 @@ public class TreeNode<T> implements Serializable {
         if (childList == null) {
             return true;
         } else {
-            if (childList.isEmpty()) {
-                return true;
-            } else {
-                return false;
-            }
+            return childList.isEmpty();
         }
     }
 
@@ -56,8 +52,9 @@ public class TreeNode<T> implements Serializable {
     }
 
     public void initChildList() {
-        if (childList == null)
+        if (childList == null) {
             childList = new ArrayList<>();
+        }
     }
 
     public boolean isValidTree() {
@@ -157,7 +154,7 @@ public class TreeNode<T> implements Serializable {
         if (this.selfId == id) {
             return this;
         }
-        if (childList.isEmpty() || childList == null) {
+        if (childList == null || childList.isEmpty()) {
             return null;
         } else {
             int childNumber = childList.size();
